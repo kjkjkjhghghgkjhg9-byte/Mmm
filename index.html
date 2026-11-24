@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17142d">
+  <meta name="description" content="KMA Pro 4.0 — مساحة واحدة لتنظيم المذاكرة والمهام والإنجازات.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="KMA Pro">
+  <title>KMA Pro 4.0 | Knowledge & Mastery Academy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#f5f6fb;--surface:#fff;--surface-2:#f7f6fc;--text:#24213a;--muted:#89879c;--line:#eceaf4;--primary:#7058d8;--primary-dark:#5741ba;--primary-soft:#eeeaff;--mint:#1a9e83;--gold:#d49a25;--blue:#4384cf;--danger:#cf5368;--shadow:0 12px 34px rgba(44,32,94,.06);--radius:20px}
+*{box-sizing:border-box}:root{padding-top:env(safe-area-inset-top,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'Cairo',Tahoma,Arial,sans-serif;font-size:14px;line-height:1.7}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #a99af7;outline-offset:2px}.app-shell{min-height:100vh}.sidebar{position:fixed;right:0;top:0;bottom:0;width:255px;background:#19162e;color:#fff;padding:27px 18px 20px;display:flex;flex-direction:column;z-index:20}.brand{display:flex;align-items:center;gap:11px;color:#fff;text-decoration:none;padding:0 8px 27px}.brand-mark{display:grid;place-items:center;width:43px;height:43px;border-radius:14px;background:linear-gradient(145deg,#a392ff,#7159dc);font-size:25px;font-weight:900;color:white;box-shadow:0 8px 20px #5b48c54d}.brand strong{display:block;font-size:18px;letter-spacing:.3px;line-height:1.2}.brand em,.mobile-brand em{font-style:normal;color:#b5a8ff}.brand small{display:block;font-size:8px;letter-spacing:1.1px;color:#a9a4c2;margin-top:5px}.side-profile{display:flex;align-items:center;gap:10px;padding:14px 11px;border:1px solid #ffffff12;background:#ffffff08;border-radius:15px;margin-bottom:23px}.avatar,.top-avatar{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:#7965dd;color:#fff;font-weight:800;font-size:17px}.profile-copy strong,.profile-copy small{display:block}.profile-copy strong{font-size:13px}.profile-copy small{font-size:10px;color:#a9a4c2}.side-nav{display:grid;gap:6px}.nav-link{border:0;background:transparent;color:#aaa6c2;display:flex;align-items:center;gap:13px;padding:11px 14px;text-align:right;border-radius:12px;font-weight:600;transition:.2s}.nav-link span{font-size:21px;width:23px;text-align:center}.nav-link:hover{background:#ffffff0d;color:#fff}.nav-link.active{background:linear-gradient(100deg,#7962e2,#6650c9);color:#fff;box-shadow:0 8px 20px #5946c533}.sidebar-bottom{margin-top:auto}.mini-quote{font-size:11px;line-height:1.9;color:#c2bdd7;background:#ffffff09;border-radius:12px;padding:12px;margin:14px 4px}.version{display:block;color:#797491;text-align:center;font-size:9px}.main-area{margin-right:255px;padding:0 36px 28px;max-width:1800px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:24px 0 26px}.topbar-title h1{font-size:24px;margin:1px 0 0;font-weight:800}.eyebrow{font-size:11px;color:var(--primary);font-weight:800;letter-spacing:.2px}.top-avatar{border:0;width:43px;height:43px;border-radius:15px}.mobile-brand{display:none}.page{display:none;animation:fadeIn .25s ease}.page.active{display:block}@keyframes fadeIn{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}.hero-card{position:relative;overflow:hidden;min-height:255px;padding:30px 34px;border-radius:24px;background:radial-gradient(circle at 75% 25%,#7058d8 0,#493a9a 32%,#27204d 75%);color:white;display:flex;align-items:center;justify-content:space-between;box-shadow:0 16px 35px #34246e24}.hero-copy{position:relative;z-index:2;max-width:55%}.pill{display:inline-flex;align-items:center;border-radius:50px;background:var(--primary-soft);color:var(--primary);font-size:11px;font-weight:800;padding:5px 12px}.pill-light{background:#ffffff1c;color:#e8e2ff;border:1px solid #ffffff1c}.hero-card h2{font-size:31px;line-height:1.45;margin:12px 0 5px;font-weight:900}.hero-card h2 span{color:#c4b8ff}.hero-card p{color:#d1cce9;font-size:12px;margin:0 0 18px}.btn{border:0;border-radius:12px;padding:10px 17px;font-weight:800;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:transform .18s,box-shadow .18s}.btn:hover{transform:translateY(-1px)}.btn-primary{background:var(--primary);color:#fff;box-shadow:0 6px 15px #7058d82c}.btn-primary:hover{background:var(--primary-dark)}.btn-white{background:white;color:#44348f}.btn-soft{background:var(--primary-soft);color:var(--primary)}.btn-danger-soft{background:#fff0f2;color:var(--danger)}.full{width:100%;margin-top:14px}.hero-art{width:42%;height:220px;position:absolute;left:2%;top:17px;display:grid;place-items:center}.orbit{position:absolute;border:1px solid #ffffff20;border-radius:50%;width:220px;height:220px}.orbit-two{width:160px;height:160px;border-style:dashed}.book-illustration{z-index:1;width:132px;height:150px;background:linear-gradient(140deg,#f9e7b1,#d8a84d);border:5px solid #f5d987;border-radius:8px 17px 17px 8px;box-shadow:12px 16px 25px #15102b65;transform:rotate(-8deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#4b347d;outline:1px solid #ffffff55;position:relative}.book-illustration:before{content:"";position:absolute;right:9px;top:0;bottom:0;border-right:2px solid #b58336}.book-illustration span{font-size:25px}.book-illustration strong{font-size:23px;letter-spacing:1px}.book-illustration small{font-size:6px;letter-spacing:1px}.float-star{position:absolute;color:#e9d9ff;font-size:26px}.star-one{top:28px;right:15%}.star-two{bottom:24px;left:15%;font-size:33px}.section-heading,.panel-heading{display:flex;justify-content:space-between;align-items:center;gap:15px}.section-heading{margin:29px 0 15px}.section-heading h2,.page-intro h2{font-size:21px;margin:1px 0 0;font-weight:900}.date-chip{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:6px 12px;font-size:10px;color:var(--muted)}.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.stat-card,.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.stat-card{padding:17px 18px;min-width:0}.stat-icon{width:37px;height:37px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:12px}.purple{background:#eee9ff;color:#7258d9}.mint{background:#e0f7f0;color:#16977c}.gold{background:#fff3d7;color:#c18a1b}.blue{background:#e4f1ff;color:#4384cf}.stat-card>span{display:block;color:var(--muted);font-size:11px;font-weight:600}.stat-card>strong{display:block;font-size:25px;line-height:1.45;margin:2px 0;font-weight:900;white-space:nowrap}.stat-card>small{font-size:10px;color:#aaa7b8}.progress-track{height:6px;background:#eeedf5;border-radius:30px;overflow:hidden;margin-top:8px}.progress-track span{height:100%;display:block;width:0;background:linear-gradient(90deg,#8d7aef,#5d47c8);border-radius:30px;transition:width .3s}.content-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:15px;margin-top:17px}.panel{padding:21px}.panel-heading h3{margin:0;font-size:15px;font-weight:900}.panel-heading p{margin:2px 0 0;color:var(--muted);font-size:10px}.panel-icon{width:40px;height:40px;display:grid;place-items:center;background:var(--surface-2);border-radius:13px;font-size:20px}.goal-row{display:flex;justify-content:space-between;align-items:center;padding:15px 2px 12px}.goal-number strong{font-size:30px;display:block;line-height:1.25}.goal-number span{color:var(--muted);font-size:11px}.goal-number b{color:var(--text)}.goal-ring{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--primary) 0deg,#efedf7 0deg);position:relative}.goal-ring:before{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--surface)}.goal-ring>div{position:relative;text-align:center}.goal-ring strong,.goal-ring small{display:block}.goal-ring strong{font-size:17px}.goal-ring small{font-size:8px;color:var(--muted)}.progress-track.large{height:8px}.text-button{border:0;background:none;color:var(--primary);font-size:11px;font-weight:800}.preview-list{margin:12px 0 0;min-height:85px}.preview-task{display:flex;align-items:center;gap:9px;padding:8px 0;border-bottom:1px solid var(--line)}.preview-task:last-child{border:0}.preview-task .task-dot{width:8px;height:8px;border-radius:50%;background:var(--primary);flex:none}.preview-task strong{font-size:11px;display:block}.preview-task small{font-size:9px;color:var(--muted)}.empty-state{text-align:center;color:var(--muted);font-size:12px;padding:25px 10px;background:var(--surface-2);border:1px dashed var(--line);border-radius:13px}.motivation-strip{display:flex;align-items:center;gap:13px;background:#f0edff;border:1px solid #e4dfff;border-radius:16px;padding:14px 18px;margin-top:17px;color:#44368b}.motivation-symbol{font-size:25px}.motivation-strip div{flex:1}.motivation-strip strong,.motivation-strip small{display:block}.motivation-strip strong{font-size:12px}.motivation-strip small{font-size:10px;color:#8174b8}.motivation-strip button{border:0;background:#fff9;color:#5741ba;border-radius:10px;width:33px;height:33px;font-size:19px}.page-intro{margin:6px 0 20px}.page-intro h2{font-size:25px}.page-intro p{margin:4px 0 0;color:var(--muted);font-size:12px}.study-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}.timer-panel{text-align:center;padding:25px}.timer-top{display:flex;justify-content:space-between;align-items:center}.status-label{font-size:11px;color:var(--muted)}.timer-circle{width:245px;height:245px;margin:24px auto 22px;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--primary) 0deg,#eeecf7 0deg)}.timer-circle:before{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--surface);border:1px solid var(--line)}.timer-circle>div{position:relative}.timer-circle span{display:block;font-size:48px;font-weight:900;letter-spacing:1px;line-height:1.3}.timer-circle small{display:block;font-size:11px;color:var(--muted)}.duration-options{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.duration-btn{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:10px;padding:7px 12px;font-size:11px}.duration-btn.selected{background:var(--primary-soft);border-color:#d5ccff;color:var(--primary);font-weight:800}.timer-actions{display:flex;justify-content:center;gap:9px;margin-top:17px}.timer-actions .btn{min-width:125px}.hint{font-size:10px;color:var(--muted);margin:16px 0 0}.session-side{align-self:start}.session-stat{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-bottom:1px solid var(--line);gap:8px}.session-stat span{color:var(--muted);font-size:11px}.session-stat strong{font-size:15px}.tip-box{background:var(--surface-2);padding:14px;border-radius:13px;margin-top:18px}.tip-box strong{font-size:12px}.tip-box p{font-size:11px;color:var(--muted);margin:5px 0 0}.add-form{display:flex;align-items:end;gap:12px;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:5px;min-width:150px;flex:1}.field>span{font-size:11px;font-weight:800;color:var(--text)}.field input,.field select,.field textarea,.chat-form input{width:100%;border:1px solid var(--line);background:var(--surface-2);border-radius:11px;padding:11px 12px;color:var(--text);outline:none;min-width:0}.field input:focus,.field select:focus,.field textarea:focus,.chat-form input:focus{border-color:#a99af7;box-shadow:0 0 0 3px #8e7be71a}.field textarea{resize:vertical}.grow{flex:1.4}.form-submit{white-space:nowrap;height:43px}.list-toolbar{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-bottom:12px;border-bottom:1px solid var(--line)}.filter-tabs{display:flex;gap:5px}.filter-tab{border:0;background:transparent;color:var(--muted);padding:7px 12px;border-radius:9px;font-size:11px}.filter-tab.active{background:var(--primary-soft);color:var(--primary);font-weight:800}.muted{color:var(--muted);font-size:10px}.task-list{display:grid;gap:9px;padding-top:12px}.task-item{display:flex;align-items:center;gap:12px;padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--surface)}.task-check{appearance:none;width:21px;height:21px;border:1.5px solid #d6d2e5;border-radius:7px;flex:none;display:grid;place-items:center;margin:0}.task-check:checked{background:var(--primary);border-color:var(--primary)}.task-check:checked:after{content:"✓";color:white;font-size:13px}.task-main{flex:1;min-width:0}.task-main strong{display:block;font-size:12px;overflow-wrap:anywhere}.task-main small{color:var(--muted);font-size:10px}.task-item.completed .task-main strong{text-decoration:line-through;color:var(--muted)}.delete-btn{border:0;background:transparent;color:#b4afc3;font-size:19px;padding:4px 7px}.delete-btn:hover{color:var(--danger)}.library-grid,.notes-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:16px}.library-card,.note-card{border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:17px;box-shadow:var(--shadow);min-width:0}.book-cover{height:85px;border-radius:12px;background:linear-gradient(135deg,#eee8ff,#d9d0ff);display:grid;place-items:center;font-size:34px;color:#7058d8;margin-bottom:13px}.library-card h3,.note-card h3{font-size:13px;margin:0 0 4px;overflow-wrap:anywhere}.library-card p,.note-card p{font-size:10px;color:var(--muted);margin:0 0 12px;overflow-wrap:anywhere}.card-actions{display:flex;gap:7px;align-items:center;justify-content:space-between}.card-actions a,.card-actions button{font-size:10px;font-weight:800;text-decoration:none;border:0;border-radius:8px;padding:6px 9px;background:var(--primary-soft);color:var(--primary)}.card-actions .delete-btn{background:transparent;color:#b4afc3;font-size:18px}.note-form{display:grid;gap:13px}.note-form .btn{justify-self:start}.note-card{position:relative}.note-card .note-date{font-size:9px;color:var(--muted);display:block;margin-bottom:8px}.note-card .note-content{white-space:pre-wrap;overflow-wrap:anywhere;max-height:180px;overflow:auto}.note-card .delete-btn{position:absolute;top:9px;left:8px}.beta-tag{display:inline-block;vertical-align:middle;background:#fff1d3;color:#a36e0e;border-radius:7px;padding:3px 7px;font-size:9px}.chat-panel{max-width:900px;margin:0 auto;padding:22px}.chat-welcome{display:flex;gap:12px;align-items:center;background:var(--surface-2);padding:15px;border-radius:15px}.assistant-avatar{width:43px;height:43px;display:grid;place-items:center;background:var(--primary);color:white;border-radius:14px;font-size:25px}.chat-welcome strong{font-size:13px}.chat-welcome p{font-size:10px;color:var(--muted);margin:3px 0 0}.suggestions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.suggestion{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:8px 11px;color:var(--text);font-size:10px}.suggestion:hover{border-color:#b7a9ff}.chat-messages{min-height:180px;max-height:390px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px 0}.chat-bubble{max-width:85%;padding:12px 14px;border-radius:14px;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.chat-bubble.assistant{align-self:flex-start;background:var(--surface-2);border:1px solid var(--line);border-top-right-radius:4px}.chat-bubble.user{align-self:flex-end;background:var(--primary);color:white;border-top-left-radius:4px}.chat-form{display:flex;gap:9px;border-top:1px solid var(--line);padding-top:15px}.chat-form input{flex:1}.stats-grid-large{margin-bottom:16px}.achievement-panel{margin-top:5px}.achievement-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:17px}.achievement{border:1px solid var(--line);border-radius:14px;padding:15px;display:flex;gap:11px;align-items:center;background:var(--surface-2);opacity:.55}.achievement.unlocked{opacity:1;background:#fffbf0;border-color:#f3e3b4}.achievement-icon{font-size:25px}.achievement strong{display:block;font-size:11px}.achievement small{font-size:9px;color:var(--muted)}.profile-panel{max-width:800px}.profile-banner{display:flex;align-items:center;gap:14px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:20px}.profile-avatar-large{width:68px;height:68px;border-radius:22px;background:linear-gradient(140deg,#9c8aff,#5d48c3);display:grid;place-items:center;color:white;font-size:28px;font-weight:900}.profile-banner h3{margin:0;font-size:18px}.profile-banner p{margin:2px 0 0;color:var(--muted);font-size:11px}.profile-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.profile-form .field:last-of-type{grid-column:1/-1}.profile-form .btn{justify-self:start}.privacy-note{font-size:10px;color:var(--muted);background:var(--surface-2);padding:12px;border-radius:10px;margin-top:20px}.profile-tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}.app-footer{display:flex;justify-content:space-between;color:#aaa7b8;font-size:9px;padding:26px 3px 8px}.bottom-nav{display:none}.toast{position:fixed;bottom:24px;left:24px;z-index:99;background:#25213d;color:#fff;padding:12px 18px;border-radius:12px;box-shadow:0 12px 30px #17142d33;font-size:12px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.25s;max-width:calc(100vw - 35px)}.toast.show{opacity:1;transform:translateY(0)}
+body.dark{--bg:#11101c;--surface:#1d1b2b;--surface-2:#242136;--text:#f2efff;--muted:#a29db8;--line:#343047;--primary:#9a87ff;--primary-dark:#806bea;--primary-soft:#30294e;--shadow:0 12px 34px #00000012}body.dark .motivation-strip{background:#282340;border-color:#3c345f;color:#e1d9ff}body.dark .motivation-strip small{color:#b2a5e8}body.dark .goal-ring{background:conic-gradient(var(--primary) 0deg,#373248 0deg)}body.dark .progress-track{background:#39354a}body.dark .achievement.unlocked{background:#302b24;border-color:#61512f}body.dark .hero-card{background:radial-gradient(circle at 75% 25%,#7058d8 0,#493a9a 32%,#27204d 75%)}body.dark .book-cover{background:linear-gradient(135deg,#30294e,#463b70)}body.dark .btn-danger-soft{background:#432630;color:#ff9bab}
+@media(max-width:1150px){.main-area{padding:0 24px 25px}.sidebar{width:225px}.main-area{margin-right:225px}.stats-grid{gap:10px}.stat-card{padding:14px}.stat-card>strong{font-size:22px}.content-grid{grid-template-columns:1fr 1fr}.library-grid,.notes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.sidebar{display:none}.main-area{margin-right:0;padding:0 17px calc(92px + env(safe-area-inset-bottom))}.topbar{padding:15px 0 18px;gap:10px}.mobile-brand{display:flex;align-items:center;gap:8px;background:transparent;border:0;color:var(--text);padding:0}.mobile-brand .brand-mark{width:36px;height:36px;border-radius:11px;font-size:21px}.mobile-brand strong{font-size:14px}.topbar-title{flex:1;text-align:center}.topbar-title .eyebrow{font-size:9px}.topbar-title h1{font-size:17px}.top-avatar{width:37px;height:37px}.hero-card{min-height:225px;padding:24px 21px}.hero-copy{max-width:67%}.hero-card h2{font-size:26px}.hero-card p{font-size:10px;max-width:240px}.hero-art{left:-8%;width:42%;opacity:.72;transform:scale(.82)}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat-card{padding:13px 14px;border-radius:16px}.stat-card>strong{font-size:22px}.section-heading{margin-top:23px}.section-heading h2{font-size:19px}.content-grid,.study-layout{grid-template-columns:1fr}.panel{padding:17px;border-radius:17px}.page-intro h2{font-size:22px}.timer-circle{width:220px;height:220px}.timer-circle span{font-size:43px}.session-side{margin-top:0}.bottom-nav{position:fixed;display:flex;right:10px;left:10px;bottom:calc(8px + env(safe-area-inset-bottom));height:66px;background:var(--surface);border:1px solid var(--line);box-shadow:0 8px 28px #20174720;border-radius:19px;z-index:40;justify-content:space-around;align-items:center;padding:5px 4px}.bottom-link{display:flex;flex:1;height:54px;flex-direction:column;align-items:center;justify-content:center;gap:1px;border:0;border-radius:13px;background:transparent;color:var(--muted)}.bottom-link span{font-size:21px;line-height:1.3}.bottom-link small{font-size:9px;font-weight:700}.bottom-link.active{color:var(--primary);background:var(--primary-soft)}.app-footer{padding-top:20px}.toast{bottom:calc(85px + env(safe-area-inset-bottom));left:14px}.library-grid,.notes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.achievement-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.add-form{align-items:stretch}.add-form .field{min-width:calc(50% - 8px)}.add-form .grow{flex:1 1 calc(50% - 8px)}.add-form .form-submit{flex:1 1 100%}}
+@media(max-width:440px){.main-area{padding-right:12px;padding-left:12px}.hero-card{padding:21px 17px;min-height:225px}.hero-copy{max-width:75%}.hero-card h2{font-size:23px}.hero-card p{max-width:190px}.hero-art{left:-17%;opacity:.48;transform:scale(.72)}.btn{padding:9px 12px;font-size:11px}.stats-grid{gap:8px}.stat-card{padding:11px}.stat-card>strong{font-size:20px}.stat-card>span{font-size:10px}.stat-card>small{font-size:9px}.stat-icon{width:33px;height:33px;margin-bottom:8px}.date-chip{font-size:9px;padding:5px 7px}.library-grid,.notes-grid{grid-template-columns:1fr 1fr;gap:9px}.library-card,.note-card{padding:12px}.book-cover{height:70px}.add-form .field{min-width:100%}.profile-form{grid-template-columns:1fr}.profile-form .field:last-of-type{grid-column:auto}.timer-panel{padding:17px 12px}.timer-circle{width:205px;height:205px}.timer-circle span{font-size:39px}.timer-actions .btn{min-width:0}.achievement-grid{grid-template-columns:1fr}.achievement{padding:12px}.chat-panel{padding:14px}.chat-bubble{max-width:94%}}
+
+
+/* KMA Pro 4.1 mobile compatibility patch */
+html,body{width:100%;min-height:100%;overflow-x:hidden}body{font-family:'Cairo',Tahoma,Arial,sans-serif}img,svg,video{max-width:100%}button{touch-action:manipulation}.main-area{min-width:0}.page,.panel,.hero-card{min-width:0}.bottom-nav{display:none}
+@media(max-width:800px){.bottom-nav{display:flex!important}.sidebar{display:none!important}.main-area{margin-right:0!important;width:100%;max-width:none;padding-right:14px;padding-left:14px;padding-bottom:calc(100px + env(safe-area-inset-bottom))}.topbar{min-width:0}.topbar-title h1{overflow-wrap:anywhere}.hero-card{width:100%;overflow:hidden}.hero-copy{max-width:75%}.hero-art{pointer-events:none}.content-grid,.study-layout{grid-template-columns:minmax(0,1fr)!important}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.library-grid,.notes-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom-nav{right:8px;left:8px;bottom:calc(8px + env(safe-area-inset-bottom));height:66px}.bottom-link{min-width:0}.bottom-link small{font-size:9px}.app-footer{gap:8px;flex-wrap:wrap}.page-intro,.panel,.stat-card{min-width:0}}
+@media(max-width:380px){.main-area{padding-right:10px;padding-left:10px}.hero-card{padding:18px 13px}.hero-copy{max-width:82%}.hero-card h2{font-size:21px}.hero-art{opacity:.25}.library-grid,.notes-grid{grid-template-columns:minmax(0,1fr)}.bottom-link span{font-size:19px}.bottom-link small{font-size:8px}}
+
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" data-page="home" aria-label="الصفحة الرئيسية">
+        <span class="brand-mark">K</span>
+        <span><strong>KMA <em>PRO</em></strong><small>KNOWLEDGE & MASTERY</small></span>
+      </a>
+      <div class="side-profile">
+        <div class="avatar" id="sideAvatar">ط</div>
+        <div class="profile-copy"><strong id="sideName">الطالب</strong><small>رحلتك نحو التميّز</small></div>
+      </div>
+      <nav class="side-nav" aria-label="القائمة الرئيسية">
+        <button class="nav-link active" data-page="home"><span>⌂</span> الرئيسية</button>
+        <button class="nav-link" data-page="study"><span>◷</span> جلسة المذاكرة</button>
+        <button class="nav-link" data-page="tasks"><span>✓</span> المهام</button>
+        <button class="nav-link" data-page="library"><span>▤</span> المكتبة</button>
+        <button class="nav-link" data-page="notes"><span>✎</span> ملاحظاتي</button>
+        <button class="nav-link" data-page="assistant"><span>✧</span> المساعد الدراسي</button>
+        <button class="nav-link" data-page="stats"><span>▥</span> إحصائياتي</button>
+        <button class="nav-link" data-page="profile"><span>◎</span> ملفي الشخصي</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="themeToggle" class="nav-link"><span id="themeIcon">☾</span> الوضع الليلي</button>
+        <div class="mini-quote">«كل خطوة صغيرة تقرّبك من هدفك»</div>
+        <small class="version">KMA Pro 4.0 · إصدار تجريبي محلي</small>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-brand" data-page="home"><span class="brand-mark">K</span><strong>KMA <em>PRO</em></strong></button>
+        <div class="topbar-title"><span class="eyebrow">مساحة تعلّمك الشخصية</span><h1 id="pageHeading">أهلًا بك 👋</h1></div>
+        <button class="top-avatar" id="topAvatar" data-page="profile" aria-label="الملف الشخصي">ط</button>
+      </header>
+
+      <section class="page active" id="page-home">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="pill pill-light">✨ ابدأ يومك بإنجاز</span>
+            <h2>مستقبلك يبدأ<br>من <span>خطوة اليوم.</span></h2>
+            <p>نظّم وقتك، أنجز مهامك، وتابع تقدّمك خطوة بخطوة.</p>
+            <button class="btn btn-white" data-page="study">ابدأ جلسة مذاكرة <span>←</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="book-illustration"><span>✦</span><strong>KMA</strong><small>LEARN · GROW</small></div>
+            <div class="float-star star-one">✦</div><div class="float-star star-two">✧</div>
+          </div>
+        </div>
+
+        <div class="section-heading"><div><span class="eyebrow">نظرة سريعة</span><h2>ملخص يومك</h2></div><span class="date-chip" id="todayDate"></span></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-icon purple">◷</div><span>وقت المذاكرة</span><strong id="homeStudyTime">٠ د</strong><small>إجمالي الوقت المسجّل</small></article>
+          <article class="stat-card"><div class="stat-icon mint">✓</div><span>المهام المكتملة</span><strong id="homeTasks">٠ / ٠</strong><small>خطوة أخرى نحو هدفك</small></article>
+          <article class="stat-card"><div class="stat-icon gold">✦</div><span>نقاط الخبرة XP</span><strong id="homeXP">٠</strong><small>تُكسبها من الإنجاز</small></article>
+          <article class="stat-card"><div class="stat-icon blue">◎</div><span>تقدّمك</span><strong id="homeProgress">٠٪</strong><div class="progress-track"><span id="homeProgressBar"></span></div></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel goal-panel">
+            <div class="panel-heading"><div><h3>هدف المذاكرة اليومي</h3><p>كل دقيقة لها قيمة</p></div><span class="panel-icon">🎯</span></div>
+            <div class="goal-row"><div class="goal-number"><strong id="goalMinutesDone">٠</strong><span>من <b id="goalMinutesTarget">٦٠</b> دقيقة</span></div><div class="goal-ring" id="goalRing"><div><strong id="goalPercent">٠٪</strong><small>من الهدف</small></div></div></div>
+            <div class="progress-track large"><span id="goalBar"></span></div>
+            <button class="btn btn-primary full" data-page="study">تابع مذاكرتك</button>
+          </article>
+          <article class="panel tasks-preview">
+            <div class="panel-heading"><div><h3>مهامك القادمة</h3><p>رتّب أولوياتك</p></div><button class="text-button" data-page="tasks">عرض الكل ←</button></div>
+            <div id="homeTaskList" class="preview-list"><div class="empty-state">أضف أول مهمة لك لتظهر هنا.</div></div>
+            <button class="btn btn-soft full" data-page="tasks">＋ إضافة مهمة</button>
+          </article>
+        </div>
+        <div class="motivation-strip"><span class="motivation-symbol">✧</span><div><strong id="motivationText">أنت لا تحتاج أن تكون مثاليًا، فقط استمر.</strong><small>رسالة اليوم</small></div><button id="newMotivation" aria-label="رسالة تحفيزية جديدة">↻</button></div>
+      </section>
+
+      <section class="page" id="page-study">
+        <div class="page-intro"><span class="eyebrow">ركّز على خطوة واحدة</span><h2>جلسة المذاكرة</h2><p>اختر المدة، أبعد المشتتات، وابدأ رحلتك.</p></div>
+        <div class="study-layout">
+          <article class="panel timer-panel">
+            <div class="timer-top"><span class="pill">◉ وضع التركيز</span><span id="timerStatus" class="status-label">جاهز للبدء</span></div>
+            <div class="timer-circle" id="timerCircle"><div><span id="timerDisplay">25:00</span><small id="timerSub">دقيقة من التركيز</small></div></div>
+            <div class="duration-options"><button class="duration-btn" data-minutes="15">١٥ دقيقة</button><button class="duration-btn selected" data-minutes="25">٢٥ دقيقة</button><button class="duration-btn" data-minutes="45">٤٥ دقيقة</button><button class="duration-btn" data-minutes="60">٦٠ دقيقة</button></div>
+            <div class="timer-actions"><button class="btn btn-primary" id="timerStart">ابدأ الجلسة</button><button class="btn btn-soft" id="timerReset">إعادة ضبط</button></div>
+            <p class="hint">يُسجّل وقت الجلسة والنقاط عند إكمالها. اترك الصفحة مفتوحة أثناء المذاكرة.</p>
+          </article>
+          <article class="panel session-side"><div class="panel-heading"><div><h3>حصيلة مذاكرتك</h3><p>إنجازاتك تتراكم مع الوقت</p></div><span class="panel-icon">📈</span></div>
+            <div class="session-stat"><span>وقت الدراسة المسجّل</span><strong id="studyTotal">٠ دقيقة</strong></div>
+            <div class="session-stat"><span>جلسات مكتملة</span><strong id="studySessions">٠</strong></div>
+            <div class="session-stat"><span>نقاط الخبرة المكتسبة</span><strong id="studyXP">٠ XP</strong></div>
+            <div class="tip-box"><strong>💡 نصيحة للتركيز</strong><p>حدّد هدفًا واحدًا للجلسة، وضع هاتفك على وضع عدم الإزعاج إن أمكن.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="page" id="page-tasks">
+        <div class="page-intro"><span class="eyebrow">خطّط ثم أنجز</span><h2>المهام الدراسية</h2><p>اكتب ما تريد إنجازه، وتابع تقدمك بسهولة.</p></div>
+        <article class="panel">
+          <form id="taskForm" class="add-form">
+            <label class="field grow"><span>اسم المهمة</span><input id="taskTitle" type="text" maxlength="100" placeholder="مثال: مراجعة درس الرياضيات" required></label>
+            <label class="field"><span>المادة</span><select id="taskSubject"><option>عام</option><option>اللغة العربية</option><option>اللغة الإنجليزية</option><option>الرياضيات</option><option>العلوم</option><option>الدراسات</option><option>الفيزياء</option><option>الكيمياء</option><option>الأحياء</option><option>التاريخ</option><option>أخرى</option></select></label>
+            <button class="btn btn-primary form-submit" type="submit">＋ أضف المهمة</button>
+          </form>
+          <div class="list-toolbar"><div class="filter-tabs"><button class="filter-tab active" data-filter="all">الكل</button><button class="filter-tab" data-filter="active">قيد التنفيذ</button><button class="filter-tab" data-filter="done">مكتملة</button></div><span id="taskCount" class="muted"></span></div>
+          <div id="taskList" class="task-list"><div class="empty-state">لا توجد مهام حتى الآن. ابدأ بإضافة مهمة جديدة.</div></div>
+        </article>
+      </section>
+
+      <section class="page" id="page-library">
+        <div class="page-intro"><span class="eyebrow">مصادرك في مكان واحد</span><h2>المكتبة الدراسية</h2><p>أضف الكتب والروابط التعليمية التي تعتمد عليها.</p></div>
+        <article class="panel">
+          <form id="bookForm" class="add-form">
+            <label class="field grow"><span>اسم الكتاب أو المصدر</span><input id="bookTitle" maxlength="100" placeholder="مثال: كتاب الرياضيات" required></label>
+            <label class="field"><span>المادة</span><select id="bookSubject"><option>عام</option><option>اللغة العربية</option><option>اللغة الإنجليزية</option><option>الرياضيات</option><option>العلوم</option><option>الدراسات</option><option>الفيزياء</option><option>الكيمياء</option><option>الأحياء</option><option>التاريخ</option><option>أخرى</option></select></label>
+            <label class="field grow"><span>رابط المصدر (اختياري)</span><input id="bookUrl" type="url" placeholder="https://..."></label>
+            <button class="btn btn-primary form-submit" type="submit">＋ أضف للمكتبة</button>
+          </form>
+        </article>
+        <div id="libraryList" class="library-grid"><div class="empty-state">مكتبتك فارغة حاليًا. أضف أول مصدر دراسي.</div></div>
+        <p class="hint">تنبيه: أضف روابط موثوقة تملك حق الوصول إليها. التطبيق لا يوفّر الكتب تلقائيًا ولا يتحقق من محتوى الروابط.</p>
+      </section>
+
+      <section class="page" id="page-notes">
+        <div class="page-intro"><span class="eyebrow">أفكارك تستحق التنظيم</span><h2>ملاحظاتي</h2><p>دوّن ملخصاتك وأفكارك، وسيتم حفظها على هذا الجهاز.</p></div>
+        <article class="panel">
+          <form id="noteForm" class="note-form">
+            <label class="field"><span>عنوان الملاحظة</span><input id="noteTitle" maxlength="100" placeholder="مثال: أهم نقاط الدرس" required></label>
+            <label class="field"><span>المحتوى</span><textarea id="noteBody" rows="5" maxlength="5000" placeholder="اكتب ملخصك هنا..." required></textarea></label>
+            <button class="btn btn-primary" type="submit">حفظ الملاحظة</button>
+          </form>
+        </article>
+        <div id="notesList" class="notes-grid"><div class="empty-state">لم تحفظ ملاحظات بعد.</div></div>
+      </section>
+
+      <section class="page" id="page-assistant">
+        <div class="page-intro"><span class="eyebrow">اسأل، افهم، وتدرّب</span><h2>المساعد الدراسي <span class="beta-tag">تجريبي</span></h2><p>مساعد محلي بسيط للتجربة. الإجابات هنا ليست اتصالًا حقيقيًا بذكاء اصطناعي.</p></div>
+        <article class="panel chat-panel">
+          <div class="chat-welcome"><div class="assistant-avatar">✧</div><div><strong>أهلًا بك في مساحة التعلّم!</strong><p>اكتب سؤالك أو اختر أحد الاقتراحات للبدء.</p></div></div>
+          <div class="suggestions"><button class="suggestion" data-prompt="ساعدني في تنظيم وقت المذاكرة">🗓️ تنظيم وقت المذاكرة</button><button class="suggestion" data-prompt="اعطني طريقة لفهم درس صعب">💡 فهم درس صعب</button><button class="suggestion" data-prompt="اعمل لي أسئلة مراجعة">📝 أسئلة مراجعة</button></div>
+          <div id="chatMessages" class="chat-messages" aria-live="polite"><div class="chat-bubble assistant">أنا مساعد KMA التجريبي. أقدر أقدّم نصائح عامة للدراسة، لكن لا أستطيع جلب معلومات مباشرة من الإنترنت في هذه النسخة.</div></div>
+          <form id="chatForm" class="chat-form"><input id="chatInput" maxlength="1000" placeholder="اكتب سؤالك هنا..." autocomplete="off" required><button class="btn btn-primary" type="submit" aria-label="إرسال">إرسال ↑</button></form>
+        </article>
+      </section>
+
+      <section class="page" id="page-stats">
+        <div class="page-intro"><span class="eyebrow">لاحظ تطوّرك</span><h2>إحصائياتي</h2><p>كل إنجاز صغير هو دليل على تقدّمك.</p></div>
+        <div class="stats-grid stats-grid-large">
+          <article class="stat-card"><div class="stat-icon purple">◷</div><span>إجمالي المذاكرة</span><strong id="statsMinutes">٠ د</strong><small>وقت مسجّل</small></article>
+          <article class="stat-card"><div class="stat-icon mint">✓</div><span>مهام مكتملة</span><strong id="statsTasks">٠</strong><small>مهمة أنجزتها</small></article>
+          <article class="stat-card"><div class="stat-icon gold">✦</div><span>نقاط الخبرة</span><strong id="statsXP">٠ XP</strong><small>تعلّم مستمر</small></article>
+          <article class="stat-card"><div class="stat-icon blue">▤</div><span>مصادر المكتبة</span><strong id="statsBooks">٠</strong><small>كتب وروابط</small></article>
+        </div>
+        <article class="panel achievement-panel"><div class="panel-heading"><div><h3>إنجازاتك</h3><p>افتح الإنجازات بالاستمرار في التعلّم</p></div><span class="panel-icon">🏆</span></div><div id="achievementList" class="achievement-grid"></div></article>
+      </section>
+
+      <section class="page" id="page-profile">
+        <div class="page-intro"><span class="eyebrow">مساحتك الخاصة</span><h2>ملفي الشخصي</h2><p>عدّل بياناتك وحدّد هدفك اليومي.</p></div>
+        <article class="panel profile-panel">
+          <div class="profile-banner"><div class="profile-avatar-large" id="profileAvatar">ط</div><div><h3 id="profileDisplayName">الطالب</h3><p id="profileDisplayEmail">لم يُضف بريد إلكتروني</p></div></div>
+          <form id="profileForm" class="profile-form">
+            <label class="field"><span>اسم الطالب</span><input id="profileName" maxlength="60" required></label>
+            <label class="field"><span>البريد الإلكتروني</span><input id="profileEmail" type="email" maxlength="120" placeholder="student@example.com"></label>
+            <label class="field"><span>هدف المذاكرة اليومي (بالدقائق)</span><input id="dailyGoal" type="number" min="15" max="600" step="15" required></label>
+            <button class="btn btn-primary" type="submit">حفظ التغييرات</button>
+          </form>
+          <div class="privacy-note">🔒 بيانات هذه النسخة تُحفظ محليًا في متصفح هذا الجهاز، وليست حسابًا سحابيًا. لا تدخل معلومات حساسة.</div>
+          <div class="profile-tools"><button class="btn btn-soft" id="exportData">تصدير نسخة احتياطية</button><button class="btn btn-danger-soft" id="resetData">مسح بيانات التطبيق</button></div>
+        </article>
+      </section>
+
+      <footer class="app-footer"><span>صُنع للتعلّم والطموح ✦</span><span>KMA Pro 4.0</span></footer>
+    </main>
+
+    <nav class="bottom-nav" aria-label="التنقل السفلي">
+      <button class="bottom-link active" data-page="home"><span>⌂</span><small>الرئيسية</small></button>
+      <button class="bottom-link" data-page="study"><span>◷</span><small>المذاكرة</small></button>
+      <button class="bottom-link" data-page="tasks"><span>✓</span><small>المهام</small></button>
+      <button class="bottom-link" data-page="library"><span>▤</span><small>المكتبة</small></button>
+      <button class="bottom-link" data-page="profile"><span>◎</span><small>حسابي</small></button>
+    </nav>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="jsFallback" style="display:none;position:fixed;z-index:99999;inset:auto 12px 90px;padding:14px;border-radius:14px;background:#8b2435;color:#fff;font:14px/1.8 Tahoma,Arial,sans-serif;direction:rtl">
+    تعذّر تشغيل التطبيق. حدّث الصفحة وحاول مرة أخرى.
+  </div>
+  <script>window.__kmaReady=false;window.addEventListener('error',function(){var e=document.getElementById('jsFallback');if(e)e.style.display='block';});setTimeout(function(){if(!window.__kmaReady){var e=document.getElementById('jsFallback');if(e)e.style.display='block';}},1800);</script>
+  <script>
+/* KMA Pro 4.0 — واجهة تعليمية محلية. لا يحتوي هذا الملف على خدمة ذكاء اصطناعي أو خادم. */
+(() => {
+  "use strict";
+  const STORAGE_KEY = "kma_pro_4_data";
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const arabic = n => new Intl.NumberFormat("ar-EG").format(n);
+  const todayKey = () => new Date().toISOString().slice(0, 10);
+  const defaultData = () => ({
+    profile: { name: "", email: "", goal: 60 },
+    tasks: [], books: [], notes: [],
+    studyByDay: {}, totalStudySeconds: 0, sessions: 0, xp: 0,
+    dark: false
+  });
+  let data = loadData();
+  let currentPage = "home";
+  let taskFilter = "all";
+  let timerDuration = 25 * 60;
+  let timerRemaining = timerDuration;
+  let timerInterval = null;
+  let timerRunning = false;
+  let toastTimeout = null;
+
+  function loadData() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return defaultData();
+      const parsed = JSON.parse(saved);
+      return { ...defaultData(), ...parsed, profile: { ...defaultData().profile, ...(parsed.profile || {}) } };
+    } catch (error) {
+      console.warn("تعذر قراءة البيانات المحفوظة", error);
+      return defaultData();
+    }
+  }
+  function saveData() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      return true;
+    } catch (error) {
+      showToast("تعذر الحفظ. قد تكون مساحة المتصفح ممتلئة.");
+      return false;
+    }
+  }
+  function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, char => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[char]));
+  }
+  function showToast(message) {
+    const toast = $("#toast");
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => toast.classList.remove("show"), 2800);
+  }
+  function minutesStudiedToday() {
+    return Math.floor((data.studyByDay[todayKey()] || 0) / 60);
+  }
+  function formatMinutes(minutes) {
+    const h = Math.floor(minutes / 60), m = minutes % 60;
+    return h ? `${arabic(h)} س ${arabic(m)} د` : `${arabic(m)} د`;
+  }
+  function navigate(page) {
+    const target = $(`#page-${page}`);
+    if (!target) return;
+    currentPage = page;
+    $$(".page").forEach(section => section.classList.toggle("active", section === target));
+    $$("[data-page]").forEach(button => button.classList.toggle("active", button.dataset.page === page && (button.classList.contains("nav-link") || button.classList.contains("bottom-link"))));
+    const titles = {home:"أهلًا بك 👋",study:"جلسة المذاكرة",tasks:"المهام الدراسية",library:"المكتبة الدراسية",notes:"ملاحظاتي",assistant:"المساعد الدراسي",stats:"إحصائياتي",profile:"ملفي الشخصي"};
+    $("#pageHeading").textContent = titles[page] || "KMA Pro";
+    if (page === "profile") renderProfile();
+    if (page === "stats") renderStats();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  function renderProfile() {
+    const name = data.profile.name || "الطالب";
+    const initial = [...name.trim()][0] || "ط";
+    $("#sideName").textContent = name;
+    $("#sideAvatar").textContent = initial;
+    $("#topAvatar").textContent = initial;
+    $("#profileAvatar").textContent = initial;
+    $("#profileDisplayName").textContent = name;
+    $("#profileDisplayEmail").textContent = data.profile.email || "لم يُضف بريد إلكتروني";
+    $("#profileName").value = data.profile.name;
+    $("#profileEmail").value = data.profile.email;
+    $("#dailyGoal").value = data.profile.goal;
+  }
+  function renderHome() {
+    const totalMinutes = Math.floor(data.totalStudySeconds / 60);
+    const done = data.tasks.filter(task => task.done).length;
+    const total = data.tasks.length;
+    const progress = total ? Math.round(done / total * 100) : 0;
+    $("#homeStudyTime").textContent = formatMinutes(totalMinutes);
+    $("#homeTasks").textContent = `${arabic(done)} / ${arabic(total)}`;
+    $("#homeXP").textContent = arabic(data.xp);
+    $("#homeProgress").textContent = `${arabic(progress)}٪`;
+    $("#homeProgressBar").style.width = `${progress}%`;
+    $("#todayDate").textContent = new Intl.DateTimeFormat("ar-EG", { weekday:"long", day:"numeric", month:"long" }).format(new Date());
+    const target = Number(data.profile.goal) || 60;
+    const todayMinutes = minutesStudiedToday();
+    const goalPct = Math.min(100, Math.round(todayMinutes / target * 100));
+    $("#goalMinutesDone").textContent = arabic(todayMinutes);
+    $("#goalMinutesTarget").textContent = arabic(target);
+    $("#goalPercent").textContent = `${arabic(goalPct)}٪`;
+    $("#goalBar").style.width = `${goalPct}%`;
+    $("#goalRing").style.background = `conic-gradient(var(--primary) ${goalPct * 3.6}deg, var(--line) 0deg)`;
+    const preview = $("#homeTaskList");
+    const tasks = data.tasks.filter(t => !t.done).slice(0, 3);
+    preview.innerHTML = tasks.length ? tasks.map(t => `<div class="preview-task"><span class="task-dot"></span><div><strong>${escapeHTML(t.title)}</strong><small>${escapeHTML(t.subject)}</small></div></div>`).join("") : '<div class="empty-state">أضف أول مهمة لك لتظهر هنا.</div>';
+  }
+  function renderTasks() {
+    const list = $("#taskList");
+    const filtered = data.tasks.filter(task => taskFilter === "all" || (taskFilter === "done" ? task.done : !task.done));
+    $("#taskCount").textContent = `${arabic(data.tasks.filter(t => t.done).length)} من ${arabic(data.tasks.length)} مكتملة`;
+    list.innerHTML = filtered.length ? filtered.map(task => `
+      <div class="task-item ${task.done ? "completed" : ""}">
+        <input class="task-check" type="checkbox" data-task-toggle="${task.id}" ${task.done ? "checked" : ""} aria-label="تغيير حالة المهمة">
+        <div class="task-main"><strong>${escapeHTML(task.title)}</strong><small>${escapeHTML(task.subject)} · أُضيفت ${escapeHTML(task.date)}</small></div>
+        <button class="delete-btn" data-task-delete="${task.id}" aria-label="حذف المهمة">×</button>
+      </div>`).join("") : `<div class="empty-state">${taskFilter === "done" ? "لا توجد مهام مكتملة بعد." : taskFilter === "active" ? "رائع! لا توجد مهام معلّقة." : "لا توجد مهام حتى الآن. أضف أول مهمة لك."}</div>`;
+  }
+  function renderLibrary() {
+    const list = $("#libraryList");
+    list.innerHTML = data.books.length ? data.books.map(book => `
+      <article class="library-card"><div class="book-cover">▤</div><h3>${escapeHTML(book.title)}</h3><p>${escapeHTML(book.subject)}</p><div class="card-actions">${book.url ? `<a href="${escapeHTML(book.url)}" target="_blank" rel="noopener noreferrer">فتح المصدر ↗</a>` : '<span class="muted">لا يوجد رابط</span>'}<button class="delete-btn" data-book-delete="${book.id}" aria-label="حذف المصدر">×</button></div></article>`).join("") : '<div class="empty-state" style="grid-column:1/-1">مكتبتك فارغة حاليًا. أضف أول مصدر دراسي.</div>';
+  }
+  function renderNotes() {
+    const list = $("#notesList");
+    list.innerHTML = data.notes.length ? data.notes.slice().reverse().map(note => `
+      <article class="note-card"><button class="delete-btn" data-note-delete="${note.id}" aria-label="حذف الملاحظة">×</button><span class="note-date">${escapeHTML(note.date)}</span><h3>${escapeHTML(note.title)}</h3><p class="note-content">${escapeHTML(note.body)}</p></article>`).join("") : '<div class="empty-state" style="grid-column:1/-1">لم تحفظ ملاحظات بعد.</div>';
+  }
+  function renderStats() {
+    const totalMinutes = Math.floor(data.totalStudySeconds / 60);
+    $("#statsMinutes").textContent = formatMinutes(totalMinutes);
+    $("#statsTasks").textContent = arabic(data.tasks.filter(t => t.done).length);
+    $("#statsXP").textContent = `${arabic(data.xp)} XP`;
+    $("#statsBooks").textContent = arabic(data.books.length);
+    $("#studyTotal").textContent = formatMinutes(totalMinutes);
+    $("#studySessions").textContent = arabic(data.sessions);
+    $("#studyXP").textContent = `${arabic(data.xp)} XP`;
+    const achievements = [
+      ["🌱","أول خطوة","أضف أول مهمة",data.tasks.length >= 1],
+      ["✅","منجِز","أكمل 5 مهام",data.tasks.filter(t=>t.done).length >= 5],
+      ["⏱️","وقت التركيز","أكمل أول جلسة",data.sessions >= 1],
+      ["📚","قارئ نشيط","أضف 3 مصادر للمكتبة",data.books.length >= 3],
+      ["✍️","صاحب الأفكار","احفظ أول ملاحظة",data.notes.length >= 1],
+      ["⭐","مئة نقطة","اجمع 100 نقطة خبرة",data.xp >= 100]
+    ];
+    $("#achievementList").innerHTML = achievements.map(a => `<div class="achievement ${a[3] ? "unlocked" : ""}"><span class="achievement-icon">${a[0]}</span><div><strong>${a[1]}</strong><small>${a[3] ? "تم فتح الإنجاز ✓" : a[2]}</small></div></div>`).join("");
+  }
+  function renderAll() {
+    renderProfile(); renderHome(); renderTasks(); renderLibrary(); renderNotes(); renderStats(); applyTheme();
+  }
+  function applyTheme() {
+    document.body.classList.toggle("dark", !!data.dark);
+    $("#themeIcon").textContent = data.dark ? "☀" : "☾";
+    $("#themeToggle").lastChild.textContent = data.dark ? " الوضع النهاري" : " الوضع الليلي";
+  }
+  function addStudySeconds(seconds) {
+    data.totalStudySeconds += seconds;
+    data.studyByDay[todayKey()] = (data.studyByDay[todayKey()] || 0) + seconds;
+  }
+  function updateTimerDisplay() {
+    const mins = Math.floor(timerRemaining / 60), secs = timerRemaining % 60;
+    $("#timerDisplay").textContent = `${String(mins).padStart(2,"0")}:${String(secs).padStart(2,"0")}`;
+    const progress = timerDuration ? (timerDuration - timerRemaining) / timerDuration : 0;
+    $("#timerCircle").style.background = `conic-gradient(var(--primary) ${progress * 360}deg, var(--line) 0deg)`;
+    $("#timerSub").textContent = timerRunning ? "أنت في وضع التركيز" : "دقيقة من التركيز";
+    $("#timerStatus").textContent = timerRunning ? "الجلسة جارية الآن" : timerRemaining === 0 ? "جلسة مكتملة 🎉" : "جاهز للبدء";
+    $("#timerStart").textContent = timerRunning ? "إيقاف مؤقت" : timerRemaining < timerDuration && timerRemaining > 0 ? "استكمال الجلسة" : "ابدأ الجلسة";
+  }
+  function stopTimer() {
+    if (timerInterval) clearInterval(timerInterval);
+    timerInterval = null; timerRunning = false; updateTimerDisplay();
+  }
+  function completeSession() {
+    stopTimer();
+    data.sessions += 1; data.xp += 25;
+    saveData(); renderAll();
+    showToast("أحسنت! أكملت جلسة المذاكرة وربحت 25 نقطة خبرة 🎉");
+    if ("vibrate" in navigator) navigator.vibrate([120, 60, 120]);
+  }
+  function toggleTimer() {
+    if (timerRunning) { stopTimer(); showToast("تم إيقاف المؤقت مؤقتًا."); return; }
+    if (timerRemaining <= 0) { showToast("اضغط إعادة ضبط لبدء جلسة جديدة."); return; }
+    timerRunning = true; updateTimerDisplay();
+    timerInterval = setInterval(() => {
+      if (timerRemaining > 0) {
+        timerRemaining--;
+        addStudySeconds(1);
+        updateTimerDisplay();
+        if (timerRemaining % 15 === 0) { saveData(); renderHome(); }
+      }
+      if (timerRemaining <= 0) completeSession();
+    }, 1000);
+  }
+  function resetTimer() {
+    stopTimer(); timerRemaining = timerDuration; updateTimerDisplay(); showToast("تمت إعادة ضبط المؤقت.");
+  }
+  function assistantReply(message) {
+    const q = message.toLowerCase();
+    if (q.includes("وقت") || q.includes("جدول") || q.includes("تنظيم")) return "جرّب هذه الخطة البسيطة:\n١. اكتب أهم 3 مهام اليوم.\n٢. ابدأ بالمهمة الأصعب عندما تكون نشيطًا.\n٣. ذاكر 25 دقيقة ثم خذ استراحة قصيرة.\n٤. في نهاية اليوم راجع ما أنجزته وعدّل خطة الغد.\n\nخصص وقتًا للنوم والراحة أيضًا.";
+    if (q.includes("أسئلة") || q.includes("مراجعة") || q.includes("اختبار")) return "طريقة مراجعة فعّالة:\n• اكتب 3 أسئلة عن الدرس من ذاكرتك.\n• أجب عنها دون النظر إلى الكتاب.\n• راجع إجاباتك وحدد النقاط التي تحتاج إلى فهم أكثر.\n\nاكتب اسم المادة والدرس لأساعدك في تنظيم مراجعة مناسبة. (هذه النسخة لا تولّد أسئلة موثوقة من المنهج تلقائيًا.)";
+    if (q.includes("صعب") || q.includes("فهم") || q.includes("شرح")) return "لفهم درس صعب، قسّمه إلى أجزاء صغيرة:\n١. اقرأ العنوان والأفكار الرئيسية.\n٢. اكتب ما فهمته بكلماتك.\n٣. ابحث عن مثال محلول ثم جرّب مثالًا مشابهًا.\n٤. دوّن السؤال المحدد الذي ما زال غير واضح.\n\nأرسل اسم الدرس أو نصه، وسأحاول مساعدتك بما يتوفر في المحادثة.";
+    if (q.includes("تحفيز") || q.includes("كسلان") || q.includes("مش قادر")) return "مش لازم تخلّص كل شيء مرة واحدة. اختار مهمة صغيرة جدًا وابدأ فيها لمدة 5 دقائق فقط. غالبًا البداية هي أصعب جزء، وبعدها تقدر تقرر تكمل أو تأخذ استراحة. التقدّم أهم من الكمال.";
+    return "شكرًا لسؤالك! أنا في هذه النسخة مساعد تجريبي يعمل بردود إرشادية بسيطة، ولست متصلًا بخدمة ذكاء اصطناعي أو الإنترنت.\n\nجرّب أن تسألني عن تنظيم وقت المذاكرة، أو طريقة مراجعة درس، أو تقسيم المهام. ويمكنك إضافة نص الدرس هنا للحصول على مساعدة مرتبطة بما ترسله.";
+  }
+  function addChatBubble(text, who) {
+    const bubble = document.createElement("div");
+    bubble.className = `chat-bubble ${who}`;
+    bubble.textContent = text;
+    $("#chatMessages").appendChild(bubble);
+    $("#chatMessages").scrollTop = $("#chatMessages").scrollHeight;
+  }
+  function initEvents() {
+    $$("[data-page]").forEach(button => button.addEventListener("click", event => {
+      event.preventDefault();
+      navigate(button.dataset.page);
+    }));
+    $("#themeToggle").addEventListener("click", () => { data.dark = !data.dark; saveData(); applyTheme(); });
+    $("#newMotivation").addEventListener("click", () => {
+      const quotes = ["القليل المستمر يصنع فرقًا كبيرًا.","ابدأ بما تستطيع، ومن مكانك الحالي.","كل سؤال تفهمه هو تقدّم حقيقي.","الاستراحة جزء من الخطة، وليست فشلًا.","قارن نفسك بأمسك، لا بغيرك.","خطوة اليوم تصنع عادة الغد."];
+      const current = $("#motivationText").textContent;
+      const choices = quotes.filter(q => q !== current);
+      $("#motivationText").textContent = choices[Math.floor(Math.random() * choices.length)];
+    });
+    $("#taskForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const title = $("#taskTitle").value.trim();
+      if (!title) return;
+      data.tasks.push({ id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()), title, subject: $("#taskSubject").value, done: false, date: new Date().toLocaleDateString("ar-EG") });
+      data.xp += 2; saveData(); $("#taskForm").reset(); renderAll(); showToast("تمت إضافة المهمة وربحت نقطتين XP.");
+    });
+    $$(".filter-tab").forEach(button => button.addEventListener("click", () => {
+      taskFilter = button.dataset.filter;
+      $$(".filter-tab").forEach(b => b.classList.toggle("active", b === button));
+      renderTasks();
+    }));
+    $("#taskList").addEventListener("change", event => {
+      const id = event.target.dataset.taskToggle;
+      if (!id) return;
+      const task = data.tasks.find(t => t.id === id);
+      if (!task) return;
+      task.done = event.target.checked;
+      if (task.done) { data.xp += 10; showToast("أحسنت! أنجزت المهمة وربحت 10 نقاط XP."); }
+      else { data.xp = Math.max(0, data.xp - 10); }
+      saveData(); renderAll();
+    });
+    $("#taskList").addEventListener("click", event => {
+      const button = event.target.closest("[data-task-delete]");
+      if (!button) return;
+      data.tasks = data.tasks.filter(t => t.id !== button.dataset.taskDelete);
+      saveData(); renderAll(); showToast("تم حذف المهمة.");
+    });
+    $("#bookForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const title = $("#bookTitle").value.trim();
+      const rawUrl = $("#bookUrl").value.trim();
+      if (!title) return;
+      let url = "";
+      if (rawUrl) {
+        try { const parsed = new URL(rawUrl); if (!["http:","https:"].includes(parsed.protocol)) throw new Error(); url = parsed.href; }
+        catch { showToast("أدخل رابطًا صحيحًا يبدأ بـ https:// أو http://"); return; }
+      }
+      data.books.push({ id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()), title, subject: $("#bookSubject").value, url });
+      data.xp += 3; saveData(); $("#bookForm").reset(); renderAll(); showToast("تمت إضافة المصدر إلى مكتبتك.");
+    });
+    $("#libraryList").addEventListener("click", event => {
+      const button = event.target.closest("[data-book-delete]");
+      if (!button) return;
+      data.books = data.books.filter(b => b.id !== button.dataset.bookDelete);
+      saveData(); renderAll(); showToast("تم حذف المصدر.");
+    });
+    $("#noteForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const title = $("#noteTitle").value.trim(), body = $("#noteBody").value.trim();
+      if (!title || !body) return;
+      data.notes.push({ id: crypto.randomUUID ? crypto.randomUUID() : String(Date.now()), title, body, date: new Date().toLocaleDateString("ar-EG") });
+      data.xp += 3; saveData(); $("#noteForm").reset(); renderAll(); showToast("تم حفظ الملاحظة.");
+    });
+    $("#notesList").addEventListener("click", event => {
+      const button = event.target.closest("[data-note-delete]");
+      if (!button) return;
+      data.notes = data.notes.filter(n => n.id !== button.dataset.noteDelete);
+      saveData(); renderAll(); showToast("تم حذف الملاحظة.");
+    });
+    $$(".duration-btn").forEach(button => button.addEventListener("click", () => {
+      if (timerRunning) { showToast("أوقف الجلسة أولًا لتغيير المدة."); return; }
+      timerDuration = Number(button.dataset.minutes) * 60; timerRemaining = timerDuration;
+      $$(".duration-btn").forEach(b => b.classList.toggle("selected", b === button));
+      updateTimerDisplay();
+    }));
+    $("#timerStart").addEventListener("click", toggleTimer);
+    $("#timerReset").addEventListener("click", resetTimer);
+    $("#profileForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const name = $("#profileName").value.trim();
+      const email = $("#profileEmail").value.trim();
+      const goal = Number($("#dailyGoal").value);
+      if (!name) { showToast("اكتب اسم الطالب أولًا."); return; }
+      if (email && !$("#profileEmail").checkValidity()) { showToast("تحقق من صيغة البريد الإلكتروني."); return; }
+      if (!Number.isFinite(goal) || goal < 15 || goal > 600) { showToast("اجعل الهدف بين 15 و600 دقيقة."); return; }
+      data.profile = { name, email, goal };
+      saveData(); renderAll(); showToast("تم حفظ ملفك الشخصي بنجاح.");
+    });
+    $("#chatForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const input = $("#chatInput"), message = input.value.trim();
+      if (!message) return;
+      addChatBubble(message, "user"); input.value = "";
+      setTimeout(() => addChatBubble(assistantReply(message), "assistant"), 250);
+    });
+    $$(".suggestion").forEach(button => button.addEventListener("click", () => {
+      $("#chatInput").value = button.dataset.prompt;
+      $("#chatForm").requestSubmit();
+    }));
+    $("#exportData").addEventListener("click", () => {
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type:"application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob), link = document.createElement("a");
+      link.href = url; link.download = `KMA-Pro-backup-${todayKey()}.json`; document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+      showToast("تم تجهيز النسخة الاحتياطية.");
+    });
+    $("#resetData").addEventListener("click", () => {
+      const confirmed = window.confirm("هل أنت متأكد؟ سيتم حذف المهام والملاحظات والإحصائيات المحفوظة على هذا الجهاز.");
+      if (!confirmed) return;
+      stopTimer(); data = defaultData(); saveData(); renderAll(); resetTimer(); navigate("home"); showToast("تم مسح بيانات التطبيق.");
+    });
+    window.addEventListener("beforeunload", () => { if (timerRunning) saveData(); });
+  }
+  function init() {
+    initEvents();
+    renderAll();
+    updateTimerDisplay();
+    if (!data.profile.name) {
+      setTimeout(() => {
+        if (!data.profile.name && currentPage === "home") showToast("ابدأ بتسجيل اسمك من صفحة «ملفي الشخصي».");
+      }, 700);
+    }
+  }
+  init();
+  window.__kmaReady = true;
+})();
+</script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){});});}</script>
+</body>
+</html>
